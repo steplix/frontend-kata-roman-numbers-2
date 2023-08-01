@@ -1,0 +1,22 @@
+{
+    "name": "frontend-kata-roman-numbers",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/steplix/frontend-kata-roman-numbers.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/steplix/frontend-kata-roman-numbers/issues"
+    },
+    "homepage": "https://github.com/steplix/frontend-kata-roman-numbers#readme",
+    "devDependencies": {
+        "jest": "^29.6.1"
+    }
+}
