@@ -73,4 +73,40 @@ describe( "convert natural numbers to romans",() => {
         //then
         expect(convertToRoman(113)).toBe("CXIII");
     })
+
+    test("convert 14 to roman XIV", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(14)).toBe("XIV");
+    })
+
+    test("convert 44 to roman XLIV", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(44)).toBe("XLIV");
+    })
+
+    test("convert 49 to roman XLIX", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(49)).toBe("XLIX");
+    })
+
+    test("convert 325 to roman CCCXXV", () => {
+        //given
+
+        //when
+        
+        //then
+        expect(convertToRoman(325)).toBe("CCCXXV");
+    })
 })

@@ -1,6 +1,6 @@
 const numbs = {
     M: 1000,
-    D:500,
+    D: 500,
     C: 100,
     L: 50,
     X: 10,
@@ -48,8 +48,33 @@ function substractNumbers(num){
    
   return result + closerNum 
 }
+
+
 function convertToRoman(num) {
+  if (num > 10 && (num.toString().endsWith('4') || num.toString().endsWith('9'))){
+     let restNumber = num.toString().slice(-1);
+     let newNumber = num - restNumber;
+     return convertToRoman(newNumber) + substractNumbers(restNumber);
+  }
+  
   return sumNumbers(num) || substractNumbers(num);
 }
+
+function decomposeNumber(num) {
+
+  let number = num;
+  for (let i = 1; i < num.toString().length + 1; i++) {
+    let res = number % Math.pow(10, i);
+    // number = number - res;
+    number = number / 10;
+    console.log('divisor', number);
+    number = number * Math.pow(10, i);
+    
+    console.log(number);
+  }
+}
+
+decomposeNumber(325);
+
 
 module.exports = convertToRoman 
