@@ -51,30 +51,26 @@ function substractNumbers(num){
 
 
 function convertToRoman(num) {
-  if (num > 10 && (num.toString().endsWith('4') || num.toString().endsWith('9'))){
-     let restNumber = num.toString().slice(-1);
-     let newNumber = num - restNumber;
-     return convertToRoman(newNumber) + substractNumbers(restNumber);
-  }
-  
-  return sumNumbers(num) || substractNumbers(num);
+  let arr = decomposeNumber(num)
+  let romanNumber = '';
+  arr.forEach(arrNum => {
+    romanNumber = romanNumber + (sumNumbers(arrNum) || substractNumbers(arrNum));
+  })
+  return romanNumber;
 }
 
 function decomposeNumber(num) {
 
   let number = num;
+  let arr = []
   for (let i = 1; i < num.toString().length + 1; i++) {
-    let res = number % Math.pow(10, i);
-    // number = number - res;
-    number = number / 10;
-    console.log('divisor', number);
-    number = number * Math.pow(10, i);
-    
-    console.log(number);
+    let remainder = number % Math.pow(10, i);
+    number = number - remainder;
+    if (remainder !== 0) arr.push(remainder);
   }
-}
 
-decomposeNumber(325);
+  return arr.reverse()
+}
 
 
 module.exports = convertToRoman 
